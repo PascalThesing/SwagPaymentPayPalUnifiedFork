@@ -1,0 +1,13 @@
+name: Run
+
+on:
+    workflow_dispatch:
+    push:
+    schedule:
+        -   cron: '30 02 * * *'
+
+jobs:
+    php-unit-tests-shopware-5-7:
+        name: Unit tests
+        uses: ./.github/workflows/php-unit-tests-shopware-5-7.yml
+        secrets: inherit
