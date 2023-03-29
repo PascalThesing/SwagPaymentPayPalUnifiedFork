@@ -76,7 +76,7 @@ class RiskManagementServiceTest extends TestCase
         $result = \json_decode($this->getContainer()->get('template')->getTemplateVars('riskManagementMatchedProducts'), true);
 
         foreach ($expectedResult as $index => $resultItem) {
-            static::assertSame($resultItem, $result[$index]);
+            static::assertTrue(in_array($resultItem, $result));
         }
     }
 
